@@ -1,0 +1,56 @@
+Ofek Nourian
+Contact: ofek.nourian@gmail.com | +972 52 622 5799 | LinkedIn: ofek-nourian-31b814164
+Profile
+Machine Learning Engineer with hands-on experience in designing, training, optimizing, and deploying AI systems. Proven ability to lead cross-functional teams and deliver complex, mission-critical solutions.
+Education
+M.Sc Electrical & Computer Engineering - Ben Gurion University (Oct 2022 - 2025)
+
+Focus: Machine Learning (ML) | Research Grant | Advisor: Dr. Ofer Hadar
+Research: Developing novel approaches for computer vision, deep learning and super resolution to improve agriculture. Published one paper in IEEE and currently working on two more.
+
+B.Sc Electrical & Computer Engineering - Holon Institute of Technology (Oct 2015 - Oct 2019)
+
+Focus: Signal Processing & Embedded systems
+Project: Infant car abandonment prevention System, connecting to car OBD diagnostics using CAN bus and reading current car status, with embedded unit under the infant seat and a custom Android app
+
+Work Experience
+Machine Learning Team Leader - Israeli Air Force (Nov 2023 - Present)
+Leading a team of nine engineers. Designing AI system architectures and hands-on implementation.
+
+Developed real-time drone classification model using a custom cascaded deep CNN model with artificial perturbations to simulate real-world variability - Field used successfully.
+Developed an LLM-powered chat-bot using LLaMA and TensorRT. Integrated Retrieval-Augmented Generation (RAG) pipeline for real-time access to proprietary documentation.
+Developed "Smart Base" surveillance application featuring people detection, aircraft detection, and number identification OCR, utilizing and fine-tuning YOLOv11 and GOTOCR 2.0.
+
+Machine Learning Team Leader - Israeli Air Force (Dec 2021 - Nov 2023)
+Co-founded an AI team to develop rapid AI solutions.
+
+Developed flight route optimization model using Reinforcement-Learning DQN model. Improved average route fuel efficiency by 10% and drastically reduced planning time by 2 hours.
+Engineered a remote surveillance system for real-time object detection using AI, developed in C++ on the Jetson Nano. Integrated with satellite communication - successfully delivered within a tight 3-month deadline.
+Developed an AI storage layout recommendation and management system for Hercules aircraft, by training reinforcement learning DQN model. Managed to reduce mission planning time by over four hours per operation.
+
+System Engineer - Israeli Air Force (Oct 2019 - Dec 2021)
+
+Led a POC project on RADAR synthetic target injection for testing aircraft weapon systems. Worked independently, self-studying U.S. RADAR signal protocol documentation and implementing core logic in VHDL. The POC was approved, funded and produced to delivery.
+
+Tutor (2023 - 2025)
+
+Mentored undergraduate Computer Science and Data Science students in Python, Machine Learning, algorithms, statistics, and math.
+
+Technical Skills
+
+Programming: Python, C++, MATLAB
+Frameworks: PyTorch, FastAPI, MLFlow, Scikit-learn, FFmpeg
+Tools: Proxmox, Linux, Docker, TensorRT, Git
+Languages: Hebrew (Native), English (fluent)
+
+Achievements & Activities
+
+1st Place – AI IDF Challenge Hackathon (2023), best solution for predicting malfunctions in the Iron Dome power generator.
+Research Grant Recipient of Ministry of Agriculture's Research Grant (2024) for "Development of an automatic system for characterizing the root system for optimal Irrigation and fertilization"
+Completed Deep Learning Specialization (Andrew Ng)
+
+Publications
+
+Divya Mishra, Ofek Nourian, Sharon Chemweno, Ofer Hadar, Naftali Lazarovitch, Jhonathan E. Ephrath. "A Novel Approach for Plant Root-Hair Counting and Its Improvement via Image Super-Resolution". Accepted for publication in IEEE Transactions on AgriFood Electronics, 2025.
+Shubham Agarwa, Ofek Nourian, Michael Sidorov, Ofer Hadar. "Plant root analysis using multi-image super resolution". Expected submission to IEEE Transactions on AgriFood Electronics, 2025.
+Ofek Nourian, Ofer Hadar. "Root Hair Segmentation Using synthetically generated dataset". Expected submission to IEEE Transactions on AgriFood Electronics, 2025.
