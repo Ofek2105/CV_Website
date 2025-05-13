@@ -2,10 +2,9 @@ version: '3.8'
 
 services:
   frontend:
-    build: ./react_landing_page
-    volumes:
-      - frontend-dist:/app/dist
-    command: npx serve -s dist -l 3000
+    build:
+      context: ./react_landing_page
+      target: production
     networks:
       - app-network
 
@@ -26,16 +25,8 @@ services:
       - "443:443"
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
-      - caddy_data:/data
-      - caddy_config:/config
-      - frontend-dist:/srv/frontend:ro
     networks:
       - app-network
-
-volumes:
-  frontend-dist:
-  caddy_data:
-  caddy_config:
 
 networks:
   app-network:
