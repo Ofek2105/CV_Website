@@ -1,8 +1,11 @@
+version: '3.8'
+
 services:
   frontend:
     build: ./react_landing_page
-    expose:
-      - "80"
+    command: sh -c "npm run build"
+    volumes:
+      - frontend-dist:/app/dist
     networks:
       - app-network
 
@@ -15,29 +18,24 @@ services:
     networks:
       - app-network
 
-  nginx:
-    image: nginx:latest
+  caddy:
+    image: caddy:latest
+    restart: unless-stopped
     ports:
       - "80:80"
       - "443:443"
     volumes:
-      - ./nginx/conf.d:/etc/nginx/conf.d
-      - ./certbot/www:/var/www/certbot
-      - ./certbot/conf:/etc/letsencrypt
-    depends_on:
-      - frontend
-      - api
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+      - frontend-dist:/srv/frontend:ro
     networks:
       - app-network
 
-  certbot:
-    image: certbot/certbot
-    volumes:
-      - ./certbot/www:/var/www/certbot
-      - ./certbot/conf:/etc/letsencrypt
-    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do sleep 1; done'"
-    networks:
-      - app-network
+volumes:
+  frontend-dist:
+  caddy_data:
+  caddy_config:
 
 networks:
   app-network:

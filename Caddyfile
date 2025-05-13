@@ -1,0 +1,5 @@
+ofek-nourian-site.com {
+  reverse_proxy /chat* api:8000
+  root * /srv/frontend
+  file_server
+}
