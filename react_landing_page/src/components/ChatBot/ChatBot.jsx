@@ -12,7 +12,7 @@ function ChatBot() {
     setResponse('')
 
     try {
-      const res = await fetch('https://ofek-nourian-site.com/chat', {
+      const res = await fetch('FUCK ME', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ question: input })
