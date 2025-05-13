@@ -1,20 +1,41 @@
-
 services:
   frontend:
     build: ./react_landing_page
-    ports:
-      - "80:80"
-    depends_on:
-      - api
+    expose:
+      - "80"
     networks:
       - app-network
 
   api:
     build: ./python_chatbot_api
-    ports:
-      - "8000:8000"
+    expose:
+      - "8000"
     environment:
-      - OPENAI_API_KEY=${OPENAI_API_KEY}  # Example if you want to pass API keys via env
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    networks:
+      - app-network
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./certbot/www:/var/www/certbot
+      - ./certbot/conf:/etc/letsencrypt
+    depends_on:
+      - frontend
+      - api
+    networks:
+      - app-network
+
+  certbot:
+    image: certbot/certbot
+    volumes:
+      - ./certbot/www:/var/www/certbot
+      - ./certbot/conf:/etc/letsencrypt
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do sleep 1; done'"
     networks:
       - app-network
 

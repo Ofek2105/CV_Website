@@ -1,14 +1,21 @@
-# Use an official Node image to build the app
-FROM node:18 AS builder
+# Build stage
+FROM node:20-alpine as build
+
 WORKDIR /app
 COPY . .
 RUN npm install
 RUN npm run build
 
-# Use an official Nginx image to serve the built app
-FROM nginx:stable-alpine
-COPY --from=builder /app/dist /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Production stage
+FROM node:20-alpine as production
+
+WORKDIR /app
+
+# Install `serve` globally
+RUN npm install -g serve
+
+# Copy the build output from the previous stage
+COPY --from=build /app/dist ./dist
 
 EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["serve", "-s", "dist", "-l", "80"]
