@@ -1,0 +1,23 @@
+
+services:
+  frontend:
+    build: ./react_landing_page
+    ports:
+      - "80:80"
+    depends_on:
+      - api
+    networks:
+      - app-network
+
+  api:
+    build: ./python_chatbot_api
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}  # Example if you want to pass API keys via env
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
