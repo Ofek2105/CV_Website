@@ -11,6 +11,8 @@ FROM node:20-alpine as production
 
 WORKDIR /app
 
+COPY --from=build /app/dist ./dist
+
 # Install `serve` globally
 RUN npm install -g serve
 
