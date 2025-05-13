@@ -14,8 +14,5 @@ WORKDIR /app
 # Install `serve` globally
 RUN npm install -g serve
 
-# Copy the build output from the previous stage
-COPY --from=build /app/dist ./dist
+EXPOSE 3000
 
-EXPOSE 80
-CMD ["serve", "-s", "dist", "-l", "80"]

@@ -3,9 +3,9 @@ version: '3.8'
 services:
   frontend:
     build: ./react_landing_page
-    command: sh -c "npm run build"
     volumes:
       - frontend-dist:/app/dist
+    command: npx serve -s dist -l 3000
     networks:
       - app-network
 
