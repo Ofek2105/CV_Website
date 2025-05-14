@@ -34,11 +34,16 @@ function ChatBot() {
   return (
     <div className="chatbot-container">
       <div className="chatbot-box">
-        <div className="chat-title">Ask Me Anything</div>
+        <div className="chat-title">🤖 Personal AI Chatbot</div>
+        <div className="chat-subtitle">Ask me anything about my skills, experience, or projects!</div>
 
         <div className="chat-response">
           {loading ? (
-            <div className="typing-animation">...</div>
+            <div className="dots-loader">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
           ) : (
             response
           )}
@@ -52,7 +57,13 @@ function ChatBot() {
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
           />
-          <button className="send-button" onClick={sendMessage}>Send</button>
+          <button
+            className="send-button"
+            onClick={sendMessage}
+            disabled={loading}
+          >
+            {loading ? 'Waiting...' : 'Send'}
+          </button>
         </div>
       </div>
     </div>
