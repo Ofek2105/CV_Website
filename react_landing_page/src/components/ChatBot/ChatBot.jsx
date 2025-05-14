@@ -38,6 +38,7 @@ function ChatBot() {
         <div className="chat-subtitle">Ask me anything about my skills, experience, or projects!</div>
 
         <div className="chat-response">
+
           {loading ? (
             <div className="dots-loader">
               <span></span>

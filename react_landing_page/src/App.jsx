@@ -2,15 +2,22 @@ import Header from './components/Header/Header'
 import Banner from './components/Banner/Banner'
 import ChatBot from './components/ChatBot/ChatBot'
 import PortfolioCarousel from './components/PortfolioCarousel/PortfolioCarousel'
+import AcademicWork from './components/AcademicWork/AcademicWork'
+import GetInTouch from './components/GetInTouch/GetInTouch'
+import Welcome from './components/Welcome/Welcome'
+
 import './App.css'
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Banner />
+      {/* <Header /> */}
+      <Welcome />
+      {/* <Banner /> */}
       <ChatBot />
       <PortfolioCarousel />
+      <AcademicWork />
+      <GetInTouch />
     </div>
   )
 }

@@ -1,0 +1,59 @@
+.academic-work {
+    padding: 4rem 2rem;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    max-width: 800px;
+    color: #eaf1ff;
+    /* margin: 0; */
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 3rem;
+    color: #eaf1ff;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.projects-list {
+    list-style-type: none;
+    padding-left: 1.5rem;
+    margin: 0;
+}
+
+.project-entry {
+    margin-bottom: 2rem;
+    padding-left: 0;
+    text-align: left;
+}
+
+.project-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+    text-align: left;
+}
+
+.project-meta {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+    color: #cdd7ee;
+    text-align: left;
+}
+
+.project-short {
+    font-weight: 500;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #dbe9ff;
+    text-align: left;
+}
+
+.project-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #e6f0ff;
+    text-align: left;
+}

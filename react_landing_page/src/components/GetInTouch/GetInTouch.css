@@ -1,0 +1,43 @@
+.get-in-touch {
+    padding: 4rem 2rem;
+    /* background-color: #f0f4f8; */
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* color: #1f2937; */
+}
+
+.emoji {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.heading {
+    font-size: 2.25rem;
+    font-weight: 600;
+    /* color: #111827; */
+    margin-bottom: 1rem;
+}
+
+.quote {
+    font-style: italic;
+    color: #6b7280;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-info {
+    font-size: 1rem;
+    line-height: 1.8;
+    /* color: #374151; */
+}
+
+.contact-info a {
+    /* color: #2563eb; */
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
