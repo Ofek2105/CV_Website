@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import './PortfolioCarousel.css'
 
 // Dynamically import images from assets folder
-const importImages = import.meta.glob('/src/assets/PortfolioCarouselSources/*.jpeg', { eager: true })
+const importImages = import.meta.glob('/src/assets/PortfolioCarouselSources/*.{jpeg,png}', { eager: true })
 
 // Get image paths and links (assuming filenames are the link in this example)
 const images = Object.keys(importImages).map((path) => ({
