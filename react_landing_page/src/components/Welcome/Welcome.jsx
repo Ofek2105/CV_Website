@@ -1,5 +1,7 @@
 import React from 'react';
+import myImage from '../../assets/my_image.jpeg';
 import './Welcome.css';
+
 import {
   FaPython,
   FaDocker,
@@ -16,7 +18,7 @@ const Welcome = () => {
       <div className="welcome-container">
         <div className='image-info'>
         <img
-          src="src/assets/my_image.jpeg"
+          src={myImage}
           alt="Profile"
           className="profile-image"
         />
