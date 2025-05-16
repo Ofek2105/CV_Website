@@ -32,7 +32,8 @@
   }
   
   .carousel-slide img {
-    max-height: 300px;
+    max-height: 550px;
+    max-width: 550px;
     width: auto;
     object-fit: contain;
     border-radius: 12px;

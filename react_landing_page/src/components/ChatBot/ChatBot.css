@@ -19,7 +19,7 @@
 }
 
 .chat-title {
-    font-size: 1.5rem;
+    font-size: 3rem;
     font-weight: bold;
     /* color: #ffffff; */
 }
@@ -33,7 +33,7 @@
 .chat-response {
     min-height: 100px;
     padding: 1rem;
-    background-color: #f8f8f8;
+    background-color: #c9c8c8;
     border-radius: 8px;
     white-space: pre-wrap;
     color: #000000;
@@ -52,7 +52,7 @@
     padding: 0.75rem;
     /* border: 1px solid #ccc; */
     border-radius: 6px;
-    font-size: 1rem;
+    font-size: 2rem;
 }
 
 .chat-input-group input:focus {
@@ -66,7 +66,7 @@
     color: white;
     border: none;
     border-radius: 6px;
-    font-size: 1rem;
+    font-size: 1.5rem;
     cursor: pointer;
     position: relative;
     overflow: hidden;
