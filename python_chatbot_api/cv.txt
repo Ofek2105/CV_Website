@@ -51,6 +51,25 @@ Completed Deep Learning Specialization (Andrew Ng)
 
 Publications
 
-Divya Mishra, Ofek Nourian, Sharon Chemweno, Ofer Hadar, Naftali Lazarovitch, Jhonathan E. Ephrath. "A Novel Approach for Plant Root-Hair Counting and Its Improvement via Image Super-Resolution". Accepted for publication in IEEE Transactions on AgriFood Electronics, 2025.
-Shubham Agarwa, Ofek Nourian, Michael Sidorov, Ofer Hadar. "Plant root analysis using multi-image super resolution". Expected submission to IEEE Transactions on AgriFood Electronics, 2025.
-Ofek Nourian, Ofer Hadar. "Root Hair Segmentation Using synthetically generated dataset". Expected submission to IEEE Transactions on AgriFood Electronics, 2025.
+1) Divya Mishra, Ofek Nourian, Sharon Chemweno, Ofer Hadar, Naftali Lazarovitch, Jhonathan E. Ephrath. "A Novel Approach for Plant Root-Hair Counting and Its Improvement via Image Super-Resolution". Accepted for publication in IEEE Transactions on AgriFood Electronics, 2025.
+In this paper I have created a classical pipline for exctracting the root-hair count from root images. in the process i have invented two algorithms, one for extracting the root structure foreground from the background using histogram manipulation, two for extracting the root count from a binary image. this than was used as a metric for testing a novel approach to a super-resolution model.
+2) Shubham Agarwa, Ofek Nourian, Michael Sidorov, Ofer Hadar. "Plant root analysis using multi-image super resolution". Expected submission to IEEE Transactions on AgriFood Electronics, 2025. used modified version of the generated real looking dataset for training a novel approach for multi-frame super-resolution model.
+3) Ofek Nourian, Ofer Hadar. "Root Hair Segmentation Using synthetically generated dataset". Expected submission to IEEE Transactions on AgriFood Electronics, 2025. synthetically generated real looking fully annotated dataset for training an instance segmentation model.
+
+Other stuff
+
+I have experience in designing 3D models for 3D printing using freeCAD. I have designed electronic boxes for compacting projects.
+
+I have participated in "Perach" program for aiding students in math and computer science
+
+I have a passion for electronics and building projects:
+- I have created a table watch for my brother's birth day, which can be connected to with a smartphone via bluetooth and configure it, using the smartphone you can turn the watch into a retro game console and play space invaders and snake with the controller being the smartphone.
+- I have created for my sister's birth day a taking plant, that will watch for people walking by and ask them to water it when the plant is dry, it will also make drinking sounds when you water it.
+- I have created a desk photo viewer that display info like: time, temperature, quote of the day, and it show photos of my girlfriend. the image dataset is using firebase and is updated in real time automatically whenever I take a picture with my girlfriend face in it.
+
+It is very important for me to keep healthy, I enjoy running, rock climbing and biking. and I try to eat healthy.
+my hobbies are : Learning New technologies, running, hiking and seeing Israel and electronics.
+
+I have finished my high-school at Israel, "mekif Tet" where I studied 5 units in math, english, pyhsics and 10 units in computers. with a final grade of 108. I have learned to program HTML, assembly, C#, SQL and android app development.
+
+I have a lot of experience in many topics and am easily qualified for senior position.
