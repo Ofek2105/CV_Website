@@ -3,10 +3,18 @@ import './PortfolioCarousel.css'
 
 const importImages = import.meta.glob('/src/assets/PortfolioCarouselSources/*.{jpeg,png}', { eager: true })
 
-const images = Object.keys(importImages).map((path) => ({
-  src: importImages[path].default,
-  link: `https://example.com/${path.split('/').pop()?.split('.')[0]}`
-}))
+const images = Object.keys(importImages).map((path) => {
+  const fileName = path.split('/').pop()?.split('.')[0] || ''
+  const title = fileName
+    .replace(/[-_]/g, ' ')
+    .replace(/\b\w/g, (c) => c.toUpperCase())
+
+  return {
+    src: importImages[path].default,
+    link: `https://example.com/${fileName}`,
+    title
+  }
+})
 
 function PortfolioCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -16,7 +24,7 @@ function PortfolioCarousel() {
     if (!isHovered) {
       const interval = setInterval(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
-      }, 3000)
+      }, 5000)
       return () => clearInterval(interval)
     }
   }, [isHovered])
@@ -47,7 +55,8 @@ function PortfolioCarousel() {
             {images.map((img, idx) => (
               <div key={idx} className="carousel-slide">
                 <a href={img.link} target="_blank" rel="noopener noreferrer">
-                  <img src={img.src} alt={`Portfolio ${idx + 1}`} />
+                  <img src={img.src} alt={img.title} />
+                  <div className="carousel-title">{img.title}</div>
                 </a>
               </div>
             ))}
