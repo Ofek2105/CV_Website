@@ -15,8 +15,7 @@ import { SiPytorch, SiProxmox } from 'react-icons/si';
 const Welcome = () => {
   return (
     <section className="welcome">
-      <div className="welcome-container">
-        <div className='image-info'>
+      <div className='image-info'>
         <img
           src={myImage}
           alt="Profile"
@@ -26,32 +25,36 @@ const Welcome = () => {
         <h4>M.Sc. Electrical Enineering</h4>
         <h4>AI Engineer & Team Leader</h4>
         </div>
+      <div className="welcome-container">
+        
         <div className="text-content">
           {/* <h1 className="name">My name Ofek Nourian</h1> */}
           <h1 className="name">Thanks for stopping by!</h1>
-          <p className="personal-info">
-          This site runs on coffee, code, and late-night ideas.</p>
+          
             <p className="technical-info">My technical background includes:</p>
-            <div className="skill-boxes">
-            {[
-                'Deep Learning',
-                'Reinforcement Learning',
-                'LLMs',
-                'Object Detection',
-                'GANs',
-                'Signal Processing',
-                'Embedded Systems',
-                'Networks',
-                'Real-Time Systems',
-                'Computer Vision',
-                'Research',
-                'LaTex',
-                '&More'
-            ].map((skill) => (
-                <div key={skill} className="skill-box">
-                {skill}
-                </div>
-            ))}
+            <div className="skill-belt-wrapper">
+              <div className="skill-belt">
+                {[...Array(2)].flatMap((_, i) =>
+                  [
+                    'Deep Learning',
+                    'Reinforcement Learning',
+                    'LLMs',
+                    'Object Detection',
+                    'GANs',
+                    'Signal Processing',
+                    'Embedded Systems',
+                    'Machine Learning',
+                    'Networks',
+                    'Real-Time Systems',
+                    'Computer Vision',
+                    'Academic Research',
+                  ].map((skill, index) => (
+                    <div key={`${skill}-${i}-${index}`} className="skill-box">
+                      {skill}
+                    </div>
+                  ))
+                )}
+              </div>
             </div>
           <div className="tech-stack">
             <h3>Main Tech Stack</h3>
@@ -75,6 +78,10 @@ const Welcome = () => {
               <FaLinkedin /> LinkedIn
             </a>
           </div>
+
+          <p className="personal-info">
+          "Working hard to make machines smarter—so I can be lazier"</p>
+
         </div>
       </div>
     </section>

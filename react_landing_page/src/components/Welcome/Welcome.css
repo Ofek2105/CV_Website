@@ -1,6 +1,6 @@
 .welcome {
     /* background-color: #ffffff; */
-    padding: 4rem 2rem;
+    /* padding: 1rem 2rem; */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     /* color: #cfd5df; */
 }
@@ -9,18 +9,18 @@
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    justify-content: sp;
+    justify-content: center;
     gap: 3rem;
     max-width: 1100px;
     margin: 0 auto;
     flex-wrap: wrap;
 }
 
-.image-info{
-    border-width: 1px;
+.image-info {
+    /* border-width: 1px; */
     padding: 20px;
-    border-style: double;
-    border-color: #afb4ff18;
+    /* border-style: double;
+    border-color: #afb4ff18; */
 }
 
 .profile-image {
@@ -37,29 +37,46 @@
     max-width: 700px;
 }
 
-.skill-boxes {
+.skill-belt-wrapper {
+    overflow: hidden;
+    width: 100%;
+    background: transparent;
+}
+
+.skill-belt {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 10px;
+    width: max-content;
+    animation: scrollSkills 14s linear infinite;
 }
 
 .skill-box {
+    flex: 0 0 auto;
     padding: 8px 14px;
     background: linear-gradient(145deg, #1e1e1e, #2e2e2e);
     border: 1px solid #444;
     border-radius: 8px;
     color: #fff;
     font-size: 0.95rem;
+    margin-right: 10px;
     box-shadow: 0 0 10px rgba(139, 108, 250, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-
 }
 
 .skill-box:hover {
     transform: scale(1.07);
     box-shadow: 0 0 15px rgba(0, 81, 255, 0.6);
 }
+
+@keyframes scrollSkills {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
 
 .name {
     font-size: 2.5rem;
@@ -86,7 +103,7 @@
     gap: 1.2rem;
     flex-wrap: wrap;
     font-size: 2rem;
-    color: #374151;
+    color: #c2c2c2;
     margin-bottom: 2rem;
     justify-content: center;
 }
