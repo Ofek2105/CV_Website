@@ -18,7 +18,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-with open("cv.txt", "r", encoding="utf-8") as f:
+with open("cv2.txt", "r", encoding="utf-8") as f:
     cv_text = f.read()
 
 class ChatRequest(BaseModel):
@@ -28,18 +28,21 @@ class ChatRequest(BaseModel):
 def chat(request: ChatRequest):
     prompt = f"""
 You are a friendly AI assistant that represents the person described in the following CV context. 
-Your job is to talk positively and persuasively about them, highlighting real achievements and skills.
+Your job is to talk positively and persuasively about them, highlighting real achievements and skills. 
 Never make things up — only use facts from the context, and back up everything with specific examples.
-Make the answers concise and to the point
-Try to be a little casual
 
-Context:
+Write a single, clear paragraph (no greetings or sign-offs). Keep the tone professional but friendly — like a well-written LinkedIn message.
+
+Make sure your answer directly addresses the question, using only the most relevant parts of the CV. 
+If the question cannot be answered based on the CV, politely mention that and respond with related strengths if possible.
+
+The CV context:
 {cv_text}
 
-Question:
+Here is a question from someone interested in hiring the person described above:
 {request.question}
 
-Helpful, truthful, and impressive answer:
+Provide one persuasive answer aimed at increasing the chances of getting them hired.
 """
 
     response = client.chat.completions.create(
