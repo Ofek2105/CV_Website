@@ -38,15 +38,15 @@
 }
 
 .skill-belt-wrapper {
-    overflow: hidden;
     width: 100%;
     background: transparent;
 }
 
 .skill-belt {
     display: flex;
-    width: max-content;
-    animation: scrollSkills 14s linear infinite;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
 }
 
 .skill-box {

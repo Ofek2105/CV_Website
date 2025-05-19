@@ -34,26 +34,24 @@ const Welcome = () => {
             <p className="technical-info">My technical background includes:</p>
             <div className="skill-belt-wrapper">
               <div className="skill-belt">
-                {[...Array(2)].flatMap((_, i) =>
-                  [
-                    'Deep Learning',
-                    'Reinforcement Learning',
-                    'LLMs',
-                    'Object Detection',
-                    'GANs',
-                    'Signal Processing',
-                    'Embedded Systems',
-                    'Machine Learning',
-                    'Networks',
-                    'Real-Time Systems',
-                    'Computer Vision',
-                    'Academic Research',
-                  ].map((skill, index) => (
-                    <div key={`${skill}-${i}-${index}`} className="skill-box">
-                      {skill}
-                    </div>
-                  ))
-                )}
+                {[
+                  'Deep Learning',
+                  'Reinforcement Learning',
+                  'LLMs',
+                  'Object Detection',
+                  'GANs',
+                  'Signal Processing',
+                  'Embedded Systems',
+                  'Machine Learning',
+                  'Networks',
+                  'Real-Time Systems',
+                  'Computer Vision',
+                  'Academic Research',
+                ].map((skill, index) => (
+                  <div key={index} className="skill-box">
+                    {skill}
+                  </div>
+                ))}
               </div>
             </div>
           <div className="tech-stack">
