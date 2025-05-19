@@ -1,0 +1,108 @@
+Ofek Nourian
+Machine Learning Engineer
+
+---
+
+Profile
+
+Machine Learning Engineer with hands-on experience in designing, training, optimizing, and deploying AI systems. Proven ability to lead cross-functional teams and deliver complex, mission-critical solutions.
+
+---
+
+Education
+
+M.Sc Electrical & Computer Engineering
+Ben Gurion University (Oct 2022 – 2025)
+Focus: Machine Learning (ML) | Research Grant | Advisor: Dr. Ofer Hadar
+Research: Developing novel approaches for computer vision, deep learning, and super resolution to improve agriculture. Published one paper in IEEE and currently working on two more.
+
+B.Sc Electrical & Computer Engineering
+Holon Institute of Technology (Oct 2015 – Oct 2019)
+Focus: Signal Processing & Embedded Systems
+Project: Infant car abandonment prevention system using CAN bus diagnostics, embedded unit under the infant seat, and custom Android app.
+
+---
+
+Work Experience
+
+Machine Learning Team Leader
+Israeli Air Force (Nov 2023 – Present)
+- Leading a team of nine engineers. Designing AI system architectures and hands-on implementation.
+- Developed real-time drone classification model using a custom cascaded deep CNN with artificial perturbations.
+- Built LLM-powered chatbot using LLaMA and TensorRT, integrating RAG pipeline for real-time document access.
+- Created "Smart Base" surveillance system with YOLOv11 and GOTOCR 2.0 for detection and OCR tasks.
+
+Machine Learning Team Leader
+Israeli Air Force (Dec 2021 – Nov 2023)
+- Co-founded an AI team for rapid AI solutions.
+- Developed flight route optimization using RL DQN, improving fuel efficiency by 10% and reducing planning time by 2 hours.
+- Engineered remote surveillance system on Jetson Nano in C++ with satellite integration.
+- Built AI-powered cargo layout recommendation system for Hercules aircraft, reducing mission planning time by 4+ hours.
+
+System Engineer
+Israeli Air Force (Oct 2019 – Dec 2021)
+- Led POC on RADAR synthetic target injection. Self-studied U.S. RADAR signal protocols and implemented logic in VHDL. Project was approved, funded, and deployed.
+
+Tutor (2023 – 2025)
+- Mentored undergraduate Computer Science and Data Science students in Python, ML, algorithms, statistics, and math.
+
+---
+
+Technical Skills
+
+- Programming: Python, MATLAB
+- Frameworks: PyTorch, FastAPI, MLFlow, Scikit-learn, FFmpeg, sklearn
+- Tools: Proxmox, Linux, Docker, TensorRT, Git
+- Languages: Hebrew (Native), English (Fluent)
+
+---
+
+Achievements & Activities
+
+- 1st Place – AI IDF Challenge Hackathon (2023): Predicting malfunctions in Iron Dome power generator.
+- Research Grant Recipient – Ministry of Agriculture (2024): Development of automatic system for root characterization.
+- Completed Deep Learning Specialization (Andrew Ng)
+
+---
+
+Publications
+
+1. A Novel Approach for Plant Root-Hair Counting and Its Improvement via Image Super-Resolution
+   Divya Mishra, Ofek Nourian, Sharon Chemweno, Ofer Hadar, Naftali Lazarovitch, Jhonathan E. Ephrath
+   Accepted in IEEE Transactions on AgriFood Electronics, 2025. Developed classical pipeline and two original algorithms for root-hair extraction and evaluation of super-resolution models.
+
+2. Plant Root Analysis Using Multi-Image Super Resolution
+   Shubham Agarwa, Ofek Nourian, Michael Sidorov, Ofer Hadar
+   Expected submission to IEEE Transactions on AgriFood Electronics, 2025. Developed and trained novel multi-frame super-resolution model using synthetically generated dataset.
+
+3. Root Hair Segmentation Using Synthetically Generated Dataset
+   Ofek Nourian, Ofer Hadar
+   Expected submission to IEEE Transactions on AgriFood Electronics, 2025. Created fully annotated synthetic dataset for training instance segmentation models.
+
+---
+
+Projects & Hobbies
+
+- Experience designing 3D models for printing using FreeCAD. Designed electronic enclosures.
+- Participated in "Perach" program mentoring students in math and CS.
+- Passionate about electronics and DIY:
+  - Built Bluetooth-enabled table watch/game console with smartphone controller (Space Invaders, Snake).
+  - Built a talking plant that requests water and reacts to motion.
+  - Built a smart desk photo viewer showing time, temperature, quotes, and auto-updated girlfriend photo album via Firebase.
+- Extensive knowledge of Arduino, Raspberry Pi, sensors, and hardware.
+- Self-hosted personal website using Docker Compose on Proxmox VM: React+javascript frontend with Python FastAPI backend.
+- I have done a project with LSTM for gene island identification with a bidirectional LSTM with positional encoding
+    achieving the highest accuracy in class.
+- I have done a project for brain wave analysis, I managed to classify the sleep stages using a deep learning model.
+- I know and used many different machine learning models when teaching computer science students such as random-forest,
+ XGBoost, knn, kmeans, EM, and a lot more.
+
+---
+
+Personal
+
+- Enjoys running, rock climbing, biking, and healthy eating.
+- Hobbies: Learning new technologies, hiking, exploring Israel, and building electronics projects.
+- High School: Mekif Tet (Israel) – Studied 5 units in math, English, physics; 10 units in computer science. Final grade: 108. Programming in HTML, assembly, C#, SQL, Android.
+- Date of Birth: December 1997
+- Eligible and experienced for senior-level roles.
