@@ -1,5 +1,5 @@
-Ofek Nourian
-Contact: ofek.nourian@gmail.com | +972 52 622 5799 | LinkedIn: ofek-nourian-31b814164
+My name is Ofek Nourian
+
 Profile
 Machine Learning Engineer with hands-on experience in designing, training, optimizing, and deploying AI systems. Proven ability to lead cross-functional teams and deliver complex, mission-critical solutions.
 Education
@@ -65,7 +65,10 @@ I have participated in "Perach" program for aiding students in math and computer
 I have a passion for electronics and building projects:
 - I have created a table watch for my brother's birth day, which can be connected to with a smartphone via bluetooth and configure it, using the smartphone you can turn the watch into a retro game console and play space invaders and snake with the controller being the smartphone.
 - I have created for my sister's birth day a taking plant, that will watch for people walking by and ask them to water it when the plant is dry, it will also make drinking sounds when you water it.
-- I have created a desk photo viewer that display info like: time, temperature, quote of the day, and it show photos of my girlfriend. the image dataset is using firebase and is updated in real time automatically whenever I take a picture with my girlfriend face in it.
+- I have created a desk photo viewer that display info like: time, temperature, quote of the day, and it show photos of my girlfriend. the image dataset is using firebase and is updated in real time automatically whenever I take a 
+picture with my girlfriend face in it.
+
+which is also why I know a lot about Arduino, raspberry pi, sensors and hardware.
 
 It is very important for me to keep healthy, I enjoy running, rock climbing and biking. and I try to eat healthy.
 my hobbies are : Learning New technologies, running, hiking and seeing Israel and electronics.
@@ -73,3 +76,8 @@ my hobbies are : Learning New technologies, running, hiking and seeing Israel an
 I have finished my high-school at Israel, "mekif Tet" where I studied 5 units in math, english, pyhsics and 10 units in computers. with a final grade of 108. I have learned to program HTML, assembly, C#, SQL and android app development.
 
 I have a lot of experience in many topics and am easily qualified for senior position.
+
+I was born at December 1997.
+
+I have made this website and self-hosted it on my Virtual Machine in my Proxmox server. it is run through a docker-compose, it runs a react app with javascript and python API backend.
+
