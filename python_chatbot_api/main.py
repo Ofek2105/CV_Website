@@ -35,6 +35,7 @@ Write a single, clear paragraph (no greetings or sign-offs). Keep the tone profe
 
 Make sure your answer directly addresses the question, using only the most relevant parts of the CV. 
 If the question cannot be answered based on the CV, politely mention that and respond with related strengths if possible.
+try to be short and to the point.
 
 The CV context:
 {cv_text}
@@ -42,7 +43,8 @@ The CV context:
 Here is a question from someone interested in hiring the person described above:
 {request.question}
 
-Provide one persuasive answer aimed at increasing the chances of getting them hired.
+Provide one persuasive answer aimed at increasing the chances of getting them hired. make sure the answer is 
+specific to the question
 """
 
     response = client.chat.completions.create(
