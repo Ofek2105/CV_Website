@@ -15,7 +15,7 @@ export default function ParticlesBackground() {
                 fullScreen: { enable: false }, // we are styling it ourselves
                 background: { color: { value: '#00000000' } }, // transparent
                 particles: {
-                    number: { value: 100, density: { enable: true, area: 800 } },
+                    number: { value: 250, density: { enable: true } },
                     color: { value: '#ffffff' },
                     shape: { type: 'circle' },
                     opacity: { value: 0.5 },
