@@ -1,5 +1,4 @@
-import React from 'react';
-import myImage from '../../assets/my_image.jpeg';
+
 import './Welcome.css';
 
 import {
@@ -14,17 +13,6 @@ import { SiPytorch, SiProxmox } from 'react-icons/si';
 
 const Welcome = () => {
   return (
-    <section className="welcome">
-      <div className='image-info'>
-        <img
-          src={myImage}
-          alt="Profile"
-          className="profile-image"
-        />
-        <h3>Ofek Nourian</h3>
-        <h4>M.Sc. Electrical Enineering</h4>
-        <h4>AI Engineer & Team Leader</h4>
-        </div>
       <div className="welcome-container">
         
         <div className="text-content">
@@ -65,24 +53,13 @@ const Welcome = () => {
               <FaGithubSquare title="Git" />
             </div>
           </div>
-          <div className="links">
-            {/* <a href="https://drive.google.com/your-cv-link" target="_blank" rel="noopener noreferrer">
-              📄 Download CV
-            </a> */}
-            {/* <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
-              <FaGithub /> GitHub
-            </a> */}
-            <a href="https://www.linkedin.com/in/ofek-nourian-31b814164" target="_blank" rel="noopener noreferrer">
-              <FaLinkedin /> LinkedIn
-            </a>
-          </div>
 
           <p className="personal-info">
           "Working hard to make machines smarter—so I can be lazier"</p>
 
         </div>
       </div>
-    </section>
+
   );
 };
 

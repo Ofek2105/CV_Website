@@ -15,7 +15,25 @@
 
 div {
   background-color: #242424;
+  /* I want to color this div */
 }
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  /* width: 100%; */
+  display: flex;
+  justify-content: center;
+}
+/* 
+
+.App {
+  position: relative;
+  z-index: 1;
+  min-width: fit-content;
+  width: 1000px;
+} */
 
 a {
   font-weight: 500;
@@ -31,7 +49,7 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
+  /* min-width: 320px; */
   min-height: 100vh;
 }
 

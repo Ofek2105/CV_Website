@@ -1,0 +1,33 @@
+.image-info {
+    /* border-width: 1px; */
+    padding: 20px;
+    /* border-style: double;
+    border-color: #afb4ff18; */
+}
+
+.profile-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 100px;
+    object-fit: cover;
+    border: 3px solid #e5e7eb;
+}
+
+
+.name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.personal-info {
+    font-size: 1.0rem;
+    line-height: 1.8;
+    /* color: #cfd5df; */
+}
+
+.personal-info h3 {
+    font-size: 3rem;
+    line-height: 0.01;
+    /* color: #cfd5df; */
+}

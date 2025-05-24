@@ -5,12 +5,16 @@ import PortfolioCarousel from './components/PortfolioCarousel/PortfolioCarousel'
 import AcademicWork from './components/AcademicWork/AcademicWork'
 import GetInTouch from './components/GetInTouch/GetInTouch'
 import Welcome from './components/Welcome/Welcome'
+import ParticleBackground from './components/ParticleBackground/ParticleBackground'
+import PersonalInfo from './components/PersonalInfo/PersonalInfo'
 
 import './App.css'
 
 function App() {
   return (
     <div className="App">
+      <PersonalInfo />
+      <ParticleBackground />
       {/* <Header /> */}
       <Welcome />
       {/* <Banner /> */}

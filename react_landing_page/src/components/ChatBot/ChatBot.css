@@ -4,6 +4,7 @@
     padding: 3rem 1rem;
     display: flex;
     justify-content: center;
+    max-width: 750px;
 }
 
 .chatbot-box {

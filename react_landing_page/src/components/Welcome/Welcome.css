@@ -10,26 +10,11 @@
     flex-direction: row;
     align-items: flex-start;
     justify-content: center;
-    gap: 3rem;
     max-width: 1100px;
     margin: 0 auto;
     flex-wrap: wrap;
 }
 
-.image-info {
-    /* border-width: 1px; */
-    padding: 20px;
-    /* border-style: double;
-    border-color: #afb4ff18; */
-}
-
-.profile-image {
-    width: 180px;
-    height: 180px;
-    border-radius: 100px;
-    object-fit: cover;
-    border: 3px solid #e5e7eb;
-}
 
 .text-content {
     flex: 1;
@@ -78,22 +63,7 @@
 }
 
 
-.name {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-}
-
-.personal-info,
-.technical-info {
-    font-size: 1.05rem;
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
-    /* color: #cfd5df; */
-}
-
 .tech-stack h3 {
-    margin-bottom: 1rem;
     font-size: 1.2rem;
     font-weight: 600;
 }
