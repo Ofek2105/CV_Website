@@ -4,6 +4,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from dotenv import load_dotenv
+from typing import List, Literal
 
 load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
@@ -21,12 +22,22 @@ app.add_middleware(
 with open("cv2.txt", "r", encoding="utf-8") as f:
     cv_text = f.read()
 
+
+class Message(BaseModel):
+    role: Literal["user", "assistant", "system"]
+    content: str
+
+
 class ChatRequest(BaseModel):
-    question: str
+    messages: List[Message]
+
 
 @app.post("/chat")
 def chat(request: ChatRequest):
-    prompt = f"""
+
+    system_message = {
+        "role": "system",
+        "content": f"""
 You are a friendly AI assistant that represents the person described in the following CV context. 
 Your job is to talk positively and persuasively about them, highlighting real achievements and skills. 
 Never make things up — only use facts from the context, and back up everything with specific examples.
@@ -35,21 +46,18 @@ Write a single, clear paragraph (no greetings or sign-offs). Keep the tone profe
 
 Make sure your answer directly addresses the question, using only the most relevant parts of the CV. 
 If the question cannot be answered based on the CV, politely mention that and respond with related strengths if possible.
-try to be short and to the point.
+Try to be short and to the point.
 
 The CV context:
 {cv_text}
-
-Here is a question from someone interested in hiring the person described above:
-{request.question}
-
-Provide one persuasive answer aimed at increasing the chances of getting them hired. make sure the answer is 
-specific to the question
 """
+    }
+
+    messages = [system_message] + [{"role": msg.role, "content": msg.content} for msg in request.messages if msg.role != 'system']
 
     response = client.chat.completions.create(
         model="gpt-3.5-turbo",
-        messages=[{"role": "user", "content": prompt}],
+        messages=messages,
         temperature=0.2,
         max_tokens=512
     )
@@ -59,4 +67,5 @@ specific to the question
 
 if __name__ == "__main__":
     import uvicorn
+
     uvicorn.run(app, host="127.0.0.1", port=8000)
