@@ -3,25 +3,33 @@ import { useState } from 'react'
 
 function ChatBot() {
   const [input, setInput] = useState('')
-  const [response, setResponse] = useState('')
+  const [messages, setMessages] = useState([])
   const [loading, setLoading] = useState(false)
 
   const sendMessage = async () => {
     if (!input.trim()) return
+    const newMessages = [...messages, { role: 'user', content: input }]
+    setMessages(newMessages)
     setLoading(true)
-    setResponse('')
+    setInput('')
 
+    alert(JSON.stringify({ messages: newMessages }))
     try {
-      const res = await fetch('/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ question: input })
-      })
+        const safeMessages = newMessages.filter(
+        (msg) => msg.role && typeof msg.content === 'string' && msg.content.trim() !== ''
+        )
+
+        const res = await fetch('/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ messages: safeMessages })
+        })
+
 
       const data = await res.json()
-      setResponse(data.response)
+      setMessages([...newMessages, { role: 'assistant', content: data.response }])
     } catch {
-      setResponse('Something went wrong. Please try again.')
+      setMessages([...newMessages, { role: 'assistant', content: 'Something went wrong. Please try again.' }])
     } finally {
       setLoading(false)
     }
@@ -37,16 +45,25 @@ function ChatBot() {
         <div className="chat-title">🤖 Personal AI Chatbot</div>
         <div className="chat-subtitle">Ask me anything about my skills, experience, or projects!</div>
 
-        <div className="chat-response">
-
-          {loading ? (
-            <div className="dots-loader">
-              <span></span>
-              <span></span>
-              <span></span>
+        <div className="chat-history">
+          {messages
+            .filter((msg) => msg.role !== 'system')
+            .map((msg, idx) => (
+              <div key={idx} className={`chat-message-wrapper ${msg.role}`}>
+              <div className={`chat-message-bubble ${msg.role}`}>
+                <strong>{msg.role === 'user' ? 'You' : 'AI'}:</strong> {msg.content}
+              </div>
             </div>
-          ) : (
-            response
+            ))}
+
+          {loading && (
+            <div className="chat-message assistant">
+              <div className="dots-loader">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
           )}
         </div>
 

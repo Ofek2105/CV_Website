@@ -43,6 +43,40 @@
     text-align: left;
 }
 
+.chat-history {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    text-align: left;
+}
+
+.chat-message-wrapper.user,
+.chat-message-wrapper.assistant {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.chat-message-bubble {
+    max-width: 80%;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+    word-wrap: break-word;
+    background-color: #ecc9c9;
+}
+
+.chat-message-bubble.user {
+    background-color: #001d35;
+}
+
+.chat-message-bubble.assistant {
+    background-color: #000930;
+    font-style: italic;
+}
+
+
 .chat-input-group {
     display: flex;
     gap: 0.5rem;
