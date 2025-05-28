@@ -23,7 +23,7 @@ function ChatBot() {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ messages: safeMessages })
         })
-
+        
 
       const data = await res.json()
       setMessages([...newMessages, { role: 'assistant', content: data.response }])
