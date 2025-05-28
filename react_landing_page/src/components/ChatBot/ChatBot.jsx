@@ -13,7 +13,6 @@ function ChatBot() {
     setLoading(true)
     setInput('')
 
-    alert(JSON.stringify({ messages: newMessages }))
     try {
         const safeMessages = newMessages.filter(
         (msg) => msg.role && typeof msg.content === 'string' && msg.content.trim() !== ''
