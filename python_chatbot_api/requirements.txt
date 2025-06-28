@@ -6,4 +6,4 @@ langchain_community
 langchain_openai
 faiss-cpu
 supabase
-psycopg2
+psycopg2-binary
