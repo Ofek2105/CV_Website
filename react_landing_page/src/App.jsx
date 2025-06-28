@@ -13,8 +13,7 @@ import './App.css'
 function App() {
   return (
     <div className="App">
-      <PersonalInfo />
-      <ParticleBackground />
+      <PersonalInfo/>
       {/* <Header /> */}
       <Welcome />
       {/* <Banner /> */}
@@ -22,6 +21,7 @@ function App() {
       <PortfolioCarousel />
       <AcademicWork />
       <GetInTouch />
+      <ParticleBackground/>
     </div>
   )
 }
