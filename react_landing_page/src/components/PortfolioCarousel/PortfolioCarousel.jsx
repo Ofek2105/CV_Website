@@ -38,11 +38,12 @@ function PortfolioCarousel() {
   }
 
   return (
-    <div
-      className="portfolio-carousel"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
+    <div className="section-container">
+      <div
+        className="portfolio-carousel"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
       {images.length > 0 && (
         <div className="carousel-track-wrapper">
           <div
@@ -64,9 +65,10 @@ function PortfolioCarousel() {
         </div>
       )}
 
-      <div className="arrows">
-        <button className="arrow left" onClick={handlePrev}>←</button>
-        <button className="arrow right" onClick={handleNext}>→</button>
+        <div className="arrows">
+          <button className="arrow left" onClick={handlePrev}>←</button>
+          <button className="arrow right" onClick={handleNext}>→</button>
+        </div>
       </div>
     </div>
   )

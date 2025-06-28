@@ -39,7 +39,7 @@ function ChatBot() {
   }
 
   return (
-    <div className="chatbot-container">
+    <div className="section-container">
       <div className="chatbot-box">
         <div className="chat-title">🤖 Personal AI Chatbot</div>
         <div className="chat-subtitle">Ask me anything about my skills, experience, or projects!</div>

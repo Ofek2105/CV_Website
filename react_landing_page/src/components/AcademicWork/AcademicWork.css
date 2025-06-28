@@ -1,19 +1,12 @@
-.academic-work {
-    padding: 4rem 2rem;
-    font-family: 'Georgia', 'Times New Roman', serif;
-    max-width: 800px;
-    color: #eaf1ff;
-    /* margin: 0; */
-}
-
 .section-title {
     font-size: 2.2rem;
     font-weight: bold;
-    text-align: left;
-    margin-bottom: 3rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
     color: #eaf1ff;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    padding: 1rem
 }
 
 .projects-list {

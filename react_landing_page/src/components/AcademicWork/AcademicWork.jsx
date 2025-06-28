@@ -24,7 +24,7 @@ const projects = [
 
 const AcademicWork = () => {
   return (
-    <div className="academic-work">
+    <div className="section-container">
       <h2 className="section-title">Academic Work</h2>
       <ul className="projects-list">
         {projects.map((project, index) => (

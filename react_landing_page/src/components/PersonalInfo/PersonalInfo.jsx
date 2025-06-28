@@ -7,7 +7,7 @@ import {
 
 const PersonalInfo = () => {
   return (
-    <div className="personal-info">
+    <div className="section-container">
       <div className='image-info'>
         <img
           src={myImage}
