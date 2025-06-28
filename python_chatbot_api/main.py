@@ -1,25 +1,31 @@
+from langchain_core import chat_history
 from openai import OpenAI
 import os
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from dotenv import load_dotenv
 from typing import List, Literal
 from langchain_community.vectorstores import FAISS
 from langchain_openai import OpenAIEmbeddings
+from supabase import create_client, Client
 
 load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+SUPABASE_URL = os.getenv("SUPABASE_URL")
+SUPABASE_KEY = os.getenv("SUPABASE_SERVICE_ROLE_KEY")
+SUPABASE_TABLE_NAME = os.getenv("SUPABASE_TABLE_NAME")
 
 embedding_model = OpenAIEmbeddings()
 vector_db = FAISS.load_local("my_faiss_index", embedding_model, allow_dangerous_deserialization=True)
 
-
+supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:80", "http://localhost", "http://localhost/"],  # ["http://localhost:80", "http://localhost", "http://localhost/"]
+    # allow_origins=["http://localhost:80", "http://localhost", "http://localhost/"],  # ["http://localhost:80", "http://localhost", "http://localhost/"]
+    allow_origins=["*"],  # ["http://localhost:80", "http://localhost", "http://localhost/"]
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -38,17 +44,21 @@ class ChatRequest(BaseModel):
     messages: List[Message]
 
 
+@app.get("/test_api_now")
+def chat():
+    return "tested successfully"
+
+
 @app.post("/chat")
-def chat(request: ChatRequest):
-    user_query = ""
-    for msg in reversed(request.messages):
-        if msg.role == "user":
-            user_query = msg.content
-            break
+def chat(request: ChatRequest, request_http: Request):
+    user_query = request.messages[-1].content if len(request.messages) > 0 else ""
 
     # Perform similarity search on the query
-    results = vector_db.similarity_search(user_query, k=10)
-    retrieved_context = "\n\n".join([doc.page_content for doc in results])
+    if user_query != "":
+        results = vector_db.similarity_search(user_query, k=10)
+        retrieved_context = "\n\n".join([doc.page_content for doc in results])
+    else:
+        retrieved_context = "Nothing to retrieve"
 
     system_message = {
         "role": "system",
@@ -70,17 +80,33 @@ def chat(request: ChatRequest):
         """
     }
 
-    messages = [system_message] + [{"role": msg.role, "content": msg.content} for msg in request.messages if msg.role != 'system']
+    if len(request.messages) > 1:
+        chat_history_messages = request.messages[:-1].__str__()
+    else:
+        chat_history_messages = "None"
 
+    messages = [system_message] + [{"role": msg.role, "content": msg.content} for msg in request.messages if
+                                   msg.role != 'system']
 
-    response = client.chat.completions.create(
+    open_ai_http_response = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=messages,
         temperature=0.8,
         max_tokens=512
     )
+    open_ai_answer = open_ai_http_response.choices[0].message.content
+    try:
+        table_data = {
+            'question': user_query,
+            'chat_history': chat_history_messages,
+            'response': open_ai_answer,
+            'ip': getattr(request_http.client, "host", "None") if request_http.client else "None"
+        }
+        supabase_response = supabase.table(SUPABASE_TABLE_NAME).insert(table_data).execute()
+    except:
+        pass
 
-    return {"response": response.choices[0].message.content}
+    return {"response": open_ai_answer}
 
 
 if __name__ == "__main__":
