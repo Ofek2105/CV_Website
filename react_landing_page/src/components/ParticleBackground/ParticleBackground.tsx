@@ -8,14 +8,14 @@ export default function ParticlesBackground() {
     }, [])
 
     return (
-        <Particles
+        <Particles 
             id="tsparticles"
             init={particlesInit}
             options={{
                 fullScreen: { enable: false }, // we are styling it ourselves
                 background: { color: { value: '#00000000' } }, // transparent
                 particles: {
-                    number: { value: 250, density: { enable: true } },
+                    number: { value: 100, density: { enable: false } },
                     color: { value: '#ffffff' },
                     shape: { type: 'circle' },
                     opacity: { value: 0.5 },
@@ -40,11 +40,11 @@ export default function ParticlesBackground() {
                 position: 'fixed',
                 top: 0,
                 left: 0,
-                width: '100vw',
-                height: '100vh',
+                width: '100%',
+                height: '100%',
                 zIndex: -1,
-                pointerEvents: 'none', // 🔥 this allows mouse scroll + clicks to pass through
-            }}
+                pointerEvents: 'none',
+                }}
         />
     )
 }
