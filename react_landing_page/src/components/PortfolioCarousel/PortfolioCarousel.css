@@ -1,4 +1,3 @@
-
 .portfolio-carousel {
   position: relative;
   width: 100%;
@@ -8,7 +7,7 @@
 }
 
 .carousel-track-wrapper {
-  width: 80%;
+  width: 100%;
   margin: auto;
   overflow: hidden;
 }
@@ -33,8 +32,8 @@
 }
 
 .carousel-slide img {
-  max-height: 550px;
-  max-width: 550px;
+  max-height: 300px;
+  max-width: 300px;
   width: auto;
   object-fit: contain;
   border-radius: 12px;
@@ -53,6 +52,11 @@
   color: #ffffff;
   text-align: center;
   text-shadow: 0 0 4px rgba(0, 0, 0, 0.7);
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .arrows {
