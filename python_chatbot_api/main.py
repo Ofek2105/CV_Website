@@ -1,3 +1,4 @@
+import requests
 from langchain_core import chat_history
 from openai import OpenAI
 import os
@@ -15,6 +16,8 @@ client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_KEY = os.getenv("SUPABASE_SERVICE_ROLE_KEY")
 SUPABASE_TABLE_NAME = os.getenv("SUPABASE_TABLE_NAME")
+TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 
 embedding_model = OpenAIEmbeddings()
 vector_db = FAISS.load_local("my_faiss_index", embedding_model, allow_dangerous_deserialization=True)
@@ -24,8 +27,9 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:80", "http://localhost", "http://localhost/"],  # ["http://localhost:80", "http://localhost", "http://localhost/"]
-    #allow_origins=["*"],  # ["http://localhost:80", "http://localhost", "http://localhost/"]
+    allow_origins=["http://localhost:80", "http://localhost", "http://localhost/"],
+    # ["http://localhost:80", "http://localhost", "http://localhost/"]
+    # allow_origins=["*"],  # ["http://localhost:80", "http://localhost", "http://localhost/"]
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -81,7 +85,9 @@ def chat(request: ChatRequest, request_http: Request):
     }
 
     if len(request.messages) > 1:
-        chat_history_messages = request.messages[:-1].__str__()
+        chat_history_messages = "\n".join(
+            f"{msg.role}: {msg.content}" for msg in request.messages[:-1]
+        )
     else:
         chat_history_messages = "None"
 
@@ -106,7 +112,44 @@ def chat(request: ChatRequest, request_http: Request):
     except:
         pass
 
-    return {"response": open_ai_answer}
+    notify_telegram(user_query, chat_history_messages, open_ai_answer)
+
+    try:
+        return {"response": open_ai_answer}
+    except:
+        pass
+
+
+def notify_telegram(question: str, chat_history: str, response: str):
+    if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID:
+        print("Missing Telegram credentials.")
+        return
+
+    message = f"""
+    🔔 *New Chat Logged*
+    
+    📜 *Chat History:* 
+    {chat_history}
+    
+    ❓ *Question:* 
+    {question}
+    
+    💬 *Response:* 
+    {response}
+    """
+    try:
+        res = requests.post(
+            f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage",
+            json={
+                "chat_id": TELEGRAM_CHAT_ID,
+                "text": message,
+                "parse_mode": "Markdown"
+            },
+            timeout=5
+        )
+        res.raise_for_status()
+    except Exception as e:
+        print(f"Telegram notification failed: {e}")
 
 
 if __name__ == "__main__":
