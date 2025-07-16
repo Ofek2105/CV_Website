@@ -4,6 +4,8 @@ services:
     build:
       context: ./react_landing_page
       target: production
+    depends_on:
+      - api
     networks:
       - app-network
 
@@ -21,6 +23,9 @@ services:
 
   caddy:
     image: caddy:latest
+    depends_on:
+      - api
+      - frontend
     restart: unless-stopped
     ports:
       - "80:80"
